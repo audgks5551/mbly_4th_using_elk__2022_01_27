@@ -6,6 +6,7 @@ services:
     container_name: elasticsearch ## 실제로 컨테이너 이름은 elk__1_elasticsearch 로 생성된다.
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,z
+      - ./elasticsearch/config/dict.txt:/usr/share/elasticsearch/config/dict.txt
     environment:
       - ELASTIC_PASSWORD=elasticpassword
       - node.name=elasticsearch ## 이 이름에 큰 의미 없음, 왜냐하면 싱글노드로 운영할 계획이기 때문에
